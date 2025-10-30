@@ -1,7 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="style.css"/>
+        <title>DIGIT 400: Zotero Research</title>
+        <link rel="stylesheet" href="https://use.typekit.net/qrv4bla.css">
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>        
     </head>
-    <body></body>
+    <body>
+        <h1> DIGIT 400: Researching the Foes of Digital Media and Technology </h1>
+            <header>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="howto.html">HOW TO BE AN ETHICAL DESIGNER</a></li>
+                        <li><a href="casestudies.html">DATA PRIVACY: IN REAL LIFE</a></li>
+                    </ul>
+                </nav>
+           </header>
+        <h2>HOW TO BE AN ETHICAL DESIGNER</h2>
+            <div class="content-wrapper">
+                <div class="info-container">
+                    <p>Back in 2006, Clive Humby, a British mathematician and entrepreneur in the field of data science and customer-centric business strategies spoke the words “Data is the new oil.” This quote has different meanings and interpretations; but we do know that this analogy implies data is an essential element when building a user-based product. A majority of our lives live in the digital world, our privacy relies on the security of data. Simultaneously, companies are fighting to tailor their products to consumers through the use of data. Now more than ever, data is a commodity.</p>
+                    <p>So as designers, how do we cultivate both the perfect product while maintaining user privacy?</p>
+                    <p>Let’s set an objective:</p>
+                    <p>Implement privacy considerations during design-thinking for optimal product development!</p>
+                    <p>That sounds like a mouthful, but worry not, we are following a well-oiled product development process practiced by industry professionals called: Privacy By Design</p>
+                    <a href="https://www.zotero.org/groups/6198434/d_rm_data_privacy__design/collections/GPYSXKQF">You can read more about it here :)</a>
+                    <p>To start, we must understand that one can’t take simple steps to get closer to the objective. So like a true designer, we will visualize our journey to the objective.</p>
+                    <p>Instructions:</p>
+                    <p>Click on the shape to toggle a pop-up box explaining the steps within the process-map</p>
+               </div>
+               <div class="diagram-container">
+                    <div class="mermaid">
+                    flowchart TD
+                    A[Ideation & Requirements Gathering] --> B{Privacy Risks Identified?}
+                    B -- Yes --> C[Privacy Risk Assessment & Stakeholder Alignment]
+                    B -- No --> D[Data Minimization & Flow Design]
+                    C --> D --> E[Prototyping & Privacy Features Design] --> F{Privacy Impact OK?}
+                    F -- No --> D
+                    F -- Yes --> G[Usability Testing with Privacy in Mind] --> I[Pre-Launch Audit & Compliance Check] --> K[Monitoring & Iteration]
+                    
+                    click A "javascript:showInfo('infoA')" "More info on Ideation"
+                    click C "javascript:showInfo('infoC')" "More info on Risk Assessment"
+                    click D "javascript:showInfo('infoD')" "More info on Flow Design"
+                    click E "javascript:showInfo('infoE')" "More info on Prototyping"
+                    click G "javascript:showInfo('infoG')" "More info on Testing"
+                    click I "javascript:showInfo('infoI')" "More info on Audit"
+                    click K "javascript:showInfo('infoK')" "More info on Monitoring"
+                    </div>
+                    <div id="infoA" class="info">
+                        <h3>Ideation & Requirements Gathering</h3>
+                        <p>Identify what data your product truly needs and embed privacy-first thinking in early brainstorming.</p>
+                    </div>
+                    
+                    <div id="infoC" class="info">
+                        <h3>Privacy Risk Assessment</h3>
+                        <p>Map potential risks and work with legal or compliance teams to reduce unnecessary exposure.</p>
+                    </div>
+                    
+                    <div id="infoD" class="info">
+                        <h3>Data Minimization & Flow Design</h3>
+                        <p>Design flows that limit what data is collected and offer clear user choices for privacy.</p>
+                    </div>
+                    
+                    <div id="infoE" class="info">
+                        <h3>Prototyping & Privacy Features</h3>
+                        <p>Add consent dialogs and transparent explanations early so users understand data use.</p>
+                    </div>
+                    
+                    <div id="infoG" class="info">
+                        <h3>Usability Testing</h3>
+                        <p>Test if users understand your privacy options and feel comfortable sharing data.</p>
+                    </div>
+                    
+                    <div id="infoI" class="info">
+                        <h3>Pre-Launch Audit</h3>
+                        <p>Ensure all privacy promises are reflected in documentation and UI behavior.</p>
+                    </div>
+                    
+                    <div id="infoK" class="info">
+                        <h3>Monitoring & Iteration</h3>
+                        <p>Gather feedback post-launch to refine privacy features and maintain user trust.</p>
+                    </div>
+                </div>
+            </div>
+        <footer>
+            <span class="footer">DIGIT 400 ZOTERO RESEARCH © 2025 by Raashee Mishra is licensed under CC BY-SA 4.0 </span><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"/><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"/>
+        </footer>
+    </body>
 </html>
