@@ -1,0 +1,153 @@
+body {
+margin: 0;
+margin-top: 30px;
+padding-left: 20px;
+padding-right: 20px;
+display: flex;
+flex-direction: column;
+min-height: 70vh;
+background-color: #FBF2C0;
+}
+
+nav ul {
+list-style: none;
+gap: 70px;
+text-align: center;
+}
+
+nav a {
+font-family: futura-100, sans-serif;
+font-weight: 700;
+font-style: normal;
+font-size: 20px;
+color: #43281C;
+text-decoration: none;
+transition: color 0.2s;
+text-align: center;
+}
+
+h1 {
+font-family: futura-100, sans-serif;
+font-weight: 700;
+font-style: normal;
+font-size: 30px;
+color: #F96F5D;
+margin-bottom: 10px;
+margin-top: 0px;
+text-align: center;
+}
+
+h2 {
+font-family: futura-100, sans-serif;
+font-weight: 500;
+font-style: normal;
+font-size: 30px;
+color: #C06E52;
+margin-bottom: 10px;
+margin-top: 0px;
+padding: 1rem;
+}
+
+h3 {
+font-family: futura-100, sans-serif;
+font-weight: 500;
+font-style: normal;
+font-size: 20px;
+color: #C06E52;
+margin-bottom: 10px;
+margin-top: 0px;
+}
+
+p {
+font-family: prestige-elite-std, monospace;
+font-weight: 700;
+font-style: normal;
+font-size: 15px;
+line-height: 1.6;
+margin-bottom: 10px;
+margin-bottom: 10px;
+margin-top: 0px;
+color: #48392A;
+}
+
+a {
+font-family: prestige-elite-std, monospace;
+font-weight: 700;
+font-style: normal;
+font-size: 15px;
+line-height: 1.6;
+margin-bottom: 10px;
+margin-bottom: 10px;
+margin-top: 0px;
+color: #48392A;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.info-container {
+width: 50%;
+padding: 2rem;
+box-sizing: border-box;
+background-color: #f9f9f9;
+border-right: 1px solid #ddd;
+overflow-y: auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.diagram-container {
+  width: 50%;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.info {
+  display: none;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 300px;
+  background: #fffefc;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 1rem 1.2rem;
+  z-index: 10;
+  animation: fadeIn 0.3s ease;
+}
+
+.info::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #fffefc transparent transparent;
+}
+
+footer {
+position: fixed;
+bottom: 10px;
+width: 100%; 
+font-family: prestige-elite-std, monospace;
+font-weight: 700;
+font-style: normal;
+font-size: 15px;
+line-height: 1.6;
+margin-bottom: 10px;
+text-align: center;
+font-style: italic;
+color: #F96F5D;
+}
