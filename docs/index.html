@@ -6,30 +6,50 @@
         <link rel="stylesheet" href="style.css"/>
         <title>DIGIT 400: DATA PRIVACY RESEARCH</title>
         <link rel="stylesheet" href="https://use.typekit.net/qrv4bla.css">
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+        
         <script>
             document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("popup-close").addEventListener("click", () => {
-            document.getElementById("popup-overlay").style.display = "none";
+                document.getElementById("popup-overlay").style.display = "none";
             });
             document.getElementById("popup-read").addEventListener("click", () => {
-            document.getElementById("popup-overlay").style.display = "none";
-            document.getElementById("read-popup-overlay").style.display = "flex";
+                document.getElementById("popup-overlay").style.display = "none";
+                document.getElementById("read-popup-overlay").style.display = "flex";
             });
             document.getElementById("read-close-btn").addEventListener("click", () => {
-            document.getElementById("read-popup-overlay").style.display = "none";
+                document.getElementById("read-popup-overlay").style.display = "none";
             });
-            document.querySelector(".scroll-bar").addEventListener("click", function () {
-            this.classList.toggle("paused");
+            const scrollBar = document.querySelector(".scroll-bar");
+            if (scrollBar) {
+                scrollBar.addEventListener("click", function() {
+                    this.classList.toggle("paused");
+                });
+            }
+            const resourceBtn = document.getElementById("resourceBtn");
+            if (resourceBtn) {
+                resourceBtn.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const target = document.getElementById("page2");
+                    const yOffset = -40;
+                    const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                });
+            }
+            window.showInfo = function(id) {
+                document.querySelectorAll(".info-popup").forEach(box => box.style.display = "none");
+                document.getElementById(id).style.display = "flex";
+            };
+            document.querySelectorAll(".close-info").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    btn.closest(".info-popup").style.display = "none";
+                });
             });
-            document.getElementById("resourceBtn").addEventListener("click", function(e) {
-            e.preventDefault();
-            const target = document.getElementById("page2");
-            const yOffset = -40;
-            const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: y, behavior: "smooth" });
-            });
-            });
-        </script>
+        });
+    </script>
    </head>        
         <body>
             <div id="popup-overlay">
@@ -63,7 +83,7 @@
                 <a href="#page4">Case Studies</a>
                 <a href="https://www.zotero.org/groups/6198434/d4_rm_data_privacy__design">Zotero</a>
             </nav>          
-            <section id="page1" class="welcome-section">
+            <section id="page1" class="welcome-section">       
                 <div class="welcome-image">
                     <img src="data-privacy.png" alt="Hiding From Big Data - Lo Cole (Behance)">
                 </div>                
@@ -122,7 +142,7 @@
                         <div class="textbox-header">
                             <span class="circle"></span>
                             <span class="close">✕</span>
-                        </div>
+                        </div>            
                         <div class="textbox-content">
                             <p> Back in 2006, Clive Humby, a British mathematician and entrepreneur in the field of data science and customer-centric business strategies spoke the words “Data is the new oil.” This quote has different meanings and interpretations; but we <i>do</i> know that this analogy implies data is an essential element when building a user-based product. A majority of our lives live in the digital world, our privacy relies on the security of data. Simultaneously, companies are fighting to tailor their products to consumers through the use of data. Now more than ever, data is a commodity.</p><br>
                             <p> So as designers, how do we cultivate both the perfect product while maintaining user privacy? </p><br>
@@ -135,10 +155,80 @@
                         </div>
                     </div>
                     <div class="page-3-image">
-                        <img src="your-image.jpg" alt="Ethical Design Flowchart">
+                        <div class="mermaid">
+                            flowchart TD
+                            A[Ideation & Requirements Gathering] --> B{Privacy Risks Identified?}
+                            B -- Yes --> C[Privacy Risk Assessment & Stakeholder Alignment]
+                            B -- No --> D[Data Minimization & Flow Design]
+                            C --> D --> E[Prototyping & Privacy Features Design] --> F{Privacy Impact OK?}
+                            F -- No --> D
+                            F -- Yes --> G[Usability Testing with Privacy in Mind] --> I[Pre-Launch Audit & Compliance Check] --> K[Monitoring & Iteration]
+                            
+                            click A "javascript:showInfo('infoA')" "More info on Ideation"
+                            click C "javascript:showInfo('infoC')" "More info on Risk Assessment"
+                            click D "javascript:showInfo('infoD')" "More info on Flow Design"
+                            click E "javascript:showInfo('infoE')" "More info on Prototyping"
+                            click G "javascript:showInfo('infoG')" "More info on Testing"
+                            click I "javascript:showInfo('infoI')" "More info on Audit"
+                            click K "javascript:showInfo('infoK')" "More info on Monitoring"
+                        </div> 
                     </div>
-                </div>
+                </div> 
             </section>
+            <div id="infoA" class="info-popup">
+                <div class="info-box">
+                    <h3>Ideation & Requirements Gathering</h3>
+                    <p>Identify essential data early and embed privacy-first thinking.</p>
+                    <button class="close-info">Close</button>
+                </div>
+            </div>
+            
+            <div id="infoC" class="info-popup">
+                <div class="info-box">
+                    <h3>Privacy Risk Assessment</h3>
+                    <p>Evaluate risks and collaborate with stakeholders.</p>
+                    <button class="close-info">Close</button>
+                </div>
+            </div>
+            
+            <div id="infoD" class="info-popup">
+                <div class="info-box">
+                    <h3>Data Minimization & Flow Design</h3>
+                    <p>Collect only necessary data and prioritize transparency.</p>
+                    <button class="close-info">Close</button>
+                </div>
+            </div>           
+            <div id="infoE" class="info-popup">
+                <div class="info-box">
+                    <h3>Prototyping & Privacy Features</h3>
+                    <p>Integrate consent and explanatory features early.</p>
+                    <button class="close-info">Close</button>
+                </div>
+            </div>
+            
+            <div id="infoG" class="info-popup">
+                <div class="info-box">
+                    <h3>Usability Testing</h3>
+                    <p>Ensure users understand how their data is handled.</p>
+                    <button class="close-info">Close</button>
+                </div>
+            </div>
+            
+            <div id="infoI" class="info-popup">
+                <div class="info-box">
+                    <h3>Pre-Launch Audit & Compliance</h3>
+                    <p>Verify your product meets privacy requirements.</p>
+                    <button class="close-info">Close</button>
+                </div>
+            </div>
+            
+            <div id="infoK" class="info-popup">
+                <div class="info-box">
+                    <h3>Monitoring & Iteration</h3>
+                    <p>Refine privacy features based on real-world feedback.</p>
+                    <button class="close-info">Close</button>
+                </div>
+            </div>
             <section id="page4" class="page four">
                 <h2>Data Privacy: In Real Life (Case Studies)</h2>
                 <div class="textbox wide spaced">
