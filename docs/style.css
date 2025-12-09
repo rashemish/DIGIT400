@@ -2,13 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #323331; 
-  image-rendering: pixelated;
 }
 
 body {
   background: #FFF2E6;
   scroll-behavior: smooth;
+  color: #323331;
+}
+
+img {
+  image-rendering: pixelated;
 }
 
 .scroll-bar {
@@ -154,6 +157,7 @@ font-family: lores-12, sans-serif;
 .welcome-button {
   display: inline-block;
   background: #F497D8;
+  color: #323331;
   padding: 12px 20px;
   border-radius: 25px;
   font-weight: bold;
@@ -255,6 +259,10 @@ h2 {
 }
 
 .info-popup {
+    font-family: lores-21-serif, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #323331;
     display: none;                 
     position: fixed ;
     top: 0; 
@@ -269,9 +277,11 @@ h2 {
 }
 
 .info-box {
+    font-family: lores-21-serif, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background: #ffffff;
-    color: #000000;
-    width: 420px;
+    color: #323331;
     max-width: 90%;
     border: 4px solid #000;
     border-radius: 22px;
@@ -287,6 +297,9 @@ h2 {
 }
 
 .info-box h3 {
+    font-family: argent-pixel-cf, sans-serif;
+    font-weight: 400;
+    font-style: italic;
     font-size: 24px;
     margin-bottom: 15px;
     font-weight: bold;
@@ -299,6 +312,9 @@ h2 {
 }
 
 .close-info {
+    font-family: lores-21-serif, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     width: 100%;
     padding: 14px 0;
     background: #e6b43b;
@@ -416,12 +432,14 @@ h2 {
 }
 
 .read-title {
+  color: #323331;
   margin: 15px;
   font-size: 24px;
   font-weight: bold;
 }
 
 .read-text {
+  color: #323331;
   margin: 15px;
   font-size: 18px;
   line-height: 1.6;
@@ -431,6 +449,7 @@ h2 {
   font-family: lores-21-serif, sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: #323331;
   width: 100%;
   padding: 14px 0;
   background: #F497D8;
